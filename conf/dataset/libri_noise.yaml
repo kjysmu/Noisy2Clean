@@ -1,6 +1,6 @@
-data_root: '/workspace/public_data/MusicDataset/musdb18hq'
-name: "MusdbHQ"
-source: ['drums', 'bass', 'other', 'vocals']
+data_root: '/workspace/jaeyong_data/SpeechDataset/libri_noise'
+name: "LibriNoise"
+source: ['clean']
 
 train:
     root: ${dataset.data_root}
