@@ -1,0 +1,37 @@
+data_root: '/workspace/public_data/MusicDataset/musdb18hq'
+name: "MusdbHQ"
+source: ['drums', 'bass', 'other', 'vocals']
+
+train:
+    root: ${dataset.data_root}
+    subset: "training"
+    sources: ${dataset.source}
+    download: ${download}
+    segment: ${segment}
+    shift: 1
+    normalize: True
+    samplerate: ${sr}
+    channels: 2
+    ext: '.wav'         
+val:
+    root: ${dataset.data_root}
+    subset: "validation"
+    sources: ${dataset.source}   
+    download: False
+    segment: 10 
+    shift: null
+    normalize: True
+    samplerate: ${sr}
+    channels: 2
+    ext: '.wav'        
+test:
+    root: ${dataset.data_root}
+    subset: "test"
+    sources: ${dataset.source}  
+    download: False
+    segment: 10
+    shift: null
+    normalize: True
+    samplerate: ${sr}
+    channels: 2
+    ext: '.wav'    
