@@ -1,39 +1,35 @@
-# Noisy2Clean
-Noisy2Clean: Novel Speech Denoising Framework using Diffusion Model
+# Noisy2Clean: Novel Speech Denoising Framework using Diffusion Model
+This repository contains the code and dataset for our novel speech denoising framework, "Noisy2Clean".
 
-
-# Installation
-
+## Installation
 `pip install -r requirements.txt`
 
-# Reproducing results
-
+## Reproducing results
 ```
 python test.py checkpoint_path='./diffusion.ckpt'
 ```
 
-
-# Training Models
+## Training Models
 
 Training logs and checkpoints are saved inside `outputs`
 
-## Diffusion model
+### Diffusion model
 
 ```
 python train.py model=TConv128Diff
 ```
 
-## Encoder-Decoder model
+### Encoder-Decoder model
 ```
 python train.py model=TConv128
 ```
 
-## Unet model
+### Unet model
 ```
 python train.py model=UNet
 ```
 
-## Multi-modal loss
+### Multi-modal loss
 
 ```
 python train.py model=TConv128Spec
