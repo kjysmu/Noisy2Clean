@@ -1,0 +1,5 @@
+name: 'UNet'
+args:
+    channels_num: 2
+task:
+    null

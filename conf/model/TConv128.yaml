@@ -1,0 +1,6 @@
+name: 'TConv128'
+args:
+    input_channels: 2
+    output_channels: 8
+task:
+    null

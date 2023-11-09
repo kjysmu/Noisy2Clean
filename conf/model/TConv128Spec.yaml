@@ -1,0 +1,11 @@
+name: 'TConv128Spec'
+args:
+    input_channels: 2
+    output_channels: 8
+task:
+    spec:
+        sample_rate: ${sr}
+        n_fft: 1024
+        hop_length: 512
+        n_mels: 229
+    lr: ${lr}
