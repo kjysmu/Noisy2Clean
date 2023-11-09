@@ -1,0 +1,42 @@
+devices: 1
+epochs: 100 
+sr: 16000
+download: False
+segment: 10
+lr: 1e-6
+compile: False # speed up training when set to True
+
+defaults:  # TODO: make moisedb matches with musdb format
+    - dataset: musdb
+    - model: UNet
+
+        
+dataloader:
+    train:
+        batch_size: 16
+        num_workers: 40
+        shuffle: True
+        pin_memory: True
+    val:
+        batch_size: 16
+        num_workers: 4
+        shuffle: False
+        pin_memory: True
+    test:
+        batch_size: 16
+        num_workers: 4
+        shuffle: False
+        pin_memory: True        
+
+        
+
+trainer:
+    devices: ${devices}
+    max_epochs: ${epochs}
+    check_val_every_n_epoch: 10
+    log_every_n_steps: 250
+    
+# Check https://hydra.cc/docs/tutorials/basic/running_your_app/working_directory/    
+hydra:
+    job:
+        chdir: True

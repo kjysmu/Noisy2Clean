@@ -1,0 +1,26 @@
+epochs: 1
+devices: 1
+sr: 16000
+checkpoint_path: '/workspace/public_data/raven/source-separation/outputs/2023-06-09/12-15-13/TConv128Diff-musdb-16000/version_1/checkpoints/last.ckpt'
+
+defaults:  # TODO: make moisedb matches with musdb format
+    - dataset: musdb
+    - model: TConv128Diff
+
+        
+dataloader:
+    test:
+        batch_size: 16
+        num_workers: 40
+        shuffle: False
+        pin_memory: True
+
+trainer:
+    devices: ${devices}
+    max_epochs: ${epochs}
+    check_val_every_n_epoch: 30
+    
+# Check https://hydra.cc/docs/tutorials/basic/running_your_app/working_directory/    
+hydra:
+    job:
+        chdir: True
