@@ -1,6 +1,8 @@
 # AudioSepDiff: Novel Audio Source Separation Framework using Diffusion Model
 This repository contains the code and dataset for our novel source separation framework.
 
+![](audiosepdiff.png)
+
 ## Installation
 `pip install -r requirements.txt`
 
